@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir pki && cd pki
+mv ../openssl.cnf .
 mkdir -p certs crl newcerts private
 touch index.txt
 echo 1000 > serial
