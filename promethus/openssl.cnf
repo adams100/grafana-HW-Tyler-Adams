@@ -1,0 +1,61 @@
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+dir               = .                    # Working directory
+certs             = $dir/certs           # Directory to store issued certificates
+crl_dir           = $dir/crl             # Directory to store CRLs
+new_certs_dir     = $dir/newcerts        # Directory for newly issued certs
+database          = $dir/index.txt       # Index file for issued certs
+serial            = $dir/serial          # Serial number file
+certificate       = $dir/certs/ca.crt    # The CA certificate
+private_key       = $dir/private/ca.key  # The CA private key
+default_md        = sha256               # Digest algorithm
+policy            = policy_anything      # Policy for CSR validation
+x509_extensions   = v3_ca                # Extensions for CA certificates
+default_days      = 3650                 # Default validity (10 years)
+
+[ req ]
+default_bits        = 4096                # Key size
+default_md          = sha256              # Digest algorithm
+prompt              = no                  # Disable prompts for manual entry
+distinguished_name  = req_distinguished_name
+x509_extensions     = v3_ca               # Extensions for self-signed certificates
+
+[ req_distinguished_name ]
+C  = US                                   # Country Name (2 letters)
+ST = California                           # State or Province Name
+L  = San Francisco                        # Locality Name (City)
+O  = My Organization                      # Organization Name
+OU = IT Department                        # Organizational Unit Name
+CN = localhost                            # Common Name (e.g., domain)
+
+[ policy_anything ]
+countryName             = optional
+stateOrProvinceName     = optional
+localityName            = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[ v3_ca ]
+basicConstraints = critical, CA:TRUE      # Marks the certificate as a CA
+keyUsage = critical, keyCertSign, cRLSign # Allows signing of certs and CRLs
+subjectKeyIdentifier = hash               # Generates a subject key identifier
+authorityKeyIdentifier = keyid:always,issuer # Identifies the CA authority
+
+[ usr_cert ]
+basicConstraints = CA:FALSE               # End-entity certificate
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+
+[ v3_req ]
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = localhost
