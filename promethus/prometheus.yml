@@ -29,7 +29,7 @@ scrape_configs:
       - targets: ["localhost:9090"]
 
 remote_write:
-- url: "${GRAFANA_ENDPOINT}"
+- url: "<GRAFANA_ENDPOINT>"
   basic_auth:
-    username: 2002528
-    password: "${APITOKEN}"
+    username: <USERNAME>
+    password: "<APITOKEN>"
