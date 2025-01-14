@@ -183,3 +183,7 @@ http://192.168.0.230:3000/a/grafana-lokiexplore-app/explore
 
 ### Other pre-made dashboards can be utilized easily
 ![](images/dashboard2.png)
+
+
+### Summary
+During this project, I came across a few issues related to SELinux causing configration files to have permission errors within the containers.  I also ran into some obsticles related to the configuration of TLS that required research to resolve, mostly related to syntax and configuration options within the openssl.cnf file.  Other than those two items, the learning curve was smooth and not too bad.
