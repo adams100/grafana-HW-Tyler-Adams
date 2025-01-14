@@ -154,10 +154,10 @@ docker run --name promtail -d -v $(pwd):/mnt/config -v /var/log:/var/log --link 
 ### Install OTEL and Loki using Docker compose
 ``` bash
 git clone -b microservice-otel-collector  https://github.com/grafana/loki-fundamentals.git
-docker compose -f loki-fundamentals/docker-compose.yml up -d
+podman-compose -f loki-fundamentals/docker-compose.yml up -d
 docker ps -a
-![](images/lokidocker.png)
 ```
+![](images/lokidocker.png)
 
 ## Create A Dashboard
 ### Nagivate to your Grafana instance being ran by docker (your IP will be different) 
