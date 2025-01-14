@@ -3,13 +3,14 @@
 
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
-3. [Setting Up the Environment](#setting-up-the-environment)
+3. [Create a Cloud Account](#create-a-grafana-cloud-account)
+4. [Setting Up the Environment](#setting-up-the-environment)
    - [Installing Docker](#installing-docker-centos-9)
    - [Generating TLS Certificates for Prometheus server (Optional)](#generating-tls-certificates-for-prometheus-server-optional)
-4. [Install And Run Prometheus](#install-and-run-prometheus)
-5. [Install OTEL and Loki using Docker compose](#install-otel-and-loki-using-docker-compose)
-6. [Create Dashboard](#create-a-dashboard)
-7. [View Image Directory](images)
+5. [Install And Run Prometheus](#install-and-run-prometheus)
+6. [Install OTEL and Loki using Docker compose](#install-otel-and-loki-using-docker-compose)
+7. [Create Dashboard](#create-a-dashboard)
+8. [View Image Directory](images)
 
 ---
 
@@ -30,6 +31,13 @@ Before starting, ensure you have:
 - An understanding of containerization and linux commandline
 
 ---
+### Create a Grafana Cloud account
+
+![](images/grafanaaccount.png)  
+
+![Create an Account](https://grafana.com/auth/sign-in)  
+
+
 
 ## Setting Up the Environment
 
