@@ -35,7 +35,7 @@ Before starting, ensure you have:
 
 ![](images/grafanaaccount.png)  
 
-![Create an Account](https://grafana.com/auth/sign-in)  
+[Create an Account](https://grafana.com/auth/sign-in)  
 
 
 
